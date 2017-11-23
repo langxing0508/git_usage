@@ -1,0 +1,19 @@
+第1步：创建SSH Key; 在用户主目录下
+	$ ssh-keygen -t rsa -C "youremail@example.com"
+	.ssh/id_rsa.pub
+
+第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页, 点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+
+
+添加远程库
+	(1) 首先，登陆GitHub，创建一个新的仓库;
+	
+	(2) 关联一个远程库，使用命令:
+		git remote add origin git@server-name:path/repo-name.git；
+			远程库的名字就是origin
+			
+	(3) 第一次推送master分支的所有内容
+		git push -u origin master
+
+	(4) 每次本地提交后，只要有必要，就可以使用命令推送最新修改
+		git push origin master
